@@ -1,9 +1,7 @@
 import React from "react";
 import Tweet from "./Tweet";
 
-const TweetList = () => {
-  const name = "Joshua";
-  const message = "this is a dope tweeeeet";
+const TweetList = ({ name, message }) => {
   return (
     <div>
       <Tweet name={name} message={message} />

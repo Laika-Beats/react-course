@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import TweetList from "./components/TweetList";
 import CreateTweet from "./components/CreateTweet";
 
 function App() {
-  function helloBtn(event) {
-    console.log(event.target.classList);
-  }
-
+  const message = "Hello";
+  const [name, setName] = useState("Joshua");
   return (
     <div className="box">
-      <h1>Hello React</h1>
-      <button onClick={helloBtn}>Click</button>
+      <CreateTweet />
+      <TweetList name={name} message={message} />
     </div>
   );
 }
