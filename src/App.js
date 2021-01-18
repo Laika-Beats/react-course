@@ -1,13 +1,13 @@
 import React from "react";
+import TweetList from "./components/TweetList";
+import CreateTweet from "./components/CreateTweet";
 
 function App() {
-  function clickBtn() {
-    alert("Button clicked.");
-  }
   return (
     <div className="box">
       <h1>Hello React</h1>
-      <button onClick={clickBtn}>Click Me</button>
+      <CreateTweet />
+      <TweetList />
     </div>
   );
 }
