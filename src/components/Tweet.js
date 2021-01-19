@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./Tweet.scss";
 
 function Tweet({ name, tweet, setTweets, tweets }) {
   const deleteTweet = () => {
