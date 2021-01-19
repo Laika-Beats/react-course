@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Tweet({ name, tweet, setTweets, tweets }) {
   const deleteTweet = () => {
     setTweets(tweets.filter((state) => state.id !== tweet.id));
   };
   const tweetDate = "01/17/2021";
+  useEffect(() => {
+    console.log("we run a function");
+  }, []);
   return (
     <div className="tweet">
       <h2>{name}</h2>
