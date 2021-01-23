@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import CreateTweet from "./components/CreateTweet";
-import TweetList from "./components/TweetList";
+import React from "react";
+import CreateNote from "./components/CreateNote";
+import NoteList from "./components/NoteList";
 
 function App() {
-  return <div>HELLO REACT</div>;
+  return (
+    <div>
+      <CreateNote />
+      <NoteList />
+    </div>
+  );
 }
 
 export default App;
