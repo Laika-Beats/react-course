@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-function CreateNote() {
-  const [input, setInput] = useState("");
-  const [notes, setNotes] = useState([]);
-
+function CreateNote({ setInput, setNotes, input, notes }) {
   let noteInput = (e) => {
-    console.log(e.target.value);
     setInput(e.target.value);
   };
   const submitNote = (e) => {
     e.preventDefault();
-    console.log("Hey");
     setNotes([...notes, input]);
     setInput("");
   };
@@ -18,10 +13,9 @@ function CreateNote() {
   return (
     <div>
       <form onSubmit={submitNote}>
-        <input onChange={noteInput}></input>
+        <input value={input} onChange={noteInput}></input>
         <button>Submit</button>
       </form>
-      <h2>{notes}</h2>
     </div>
   );
 }

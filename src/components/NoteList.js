@@ -1,11 +1,12 @@
 import React from "react";
+import Note from "./Note";
 
-function NoteList() {
+function NoteList({ user, notes, setNotes }) {
   return (
     <div>
-      <h1>Note 1</h1>
-      <h1>Note 2</h1>
-      <h1>Note 3</h1>
+      {notes.map((note) => (
+        <Note user={user} note={note} notes={notes} setNotes={setNotes} />
+      ))}
     </div>
   );
 }
