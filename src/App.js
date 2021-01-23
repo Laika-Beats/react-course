@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import Tweet from "./components/Tweet";
 import CreateTweet from "./components/CreateTweet";
 import TweetList from "./components/TweetList";
 
 function App() {
   let [name, setName] = useState("Joshua");
+  const [input, setInput] = useState("");
+  const [tweets, setTweets] = useState([]);
+
   const sayHelloHandler = () => {
     if (name === "Joshua") {
       setName("Laika Beats");
@@ -19,8 +21,18 @@ function App() {
       <button className="active" onClick={sayHelloHandler}>
         Click
       </button>
-      <CreateTweet />
-      <TweetList name={name} message="this is a message i think" />
+      <CreateTweet
+        input={input}
+        setInput={setInput}
+        tweets={tweets}
+        setTweets={setTweets}
+      />
+      <TweetList
+        name={name}
+        input={input}
+        tweets={tweets}
+        setTweets={setTweets}
+      />
     </div>
   );
 }
