@@ -1,21 +1,38 @@
 import React, { useState } from "react";
-import CreateNote from "./components/CreateNote";
-import NoteList from "./components/NoteList";
+import CreateTweet from "./components/CreateTweet";
+import TweetList from "./components/TweetList";
 
 function App() {
-  const user = "Joshua";
+  let [name, setName] = useState("Joshua");
   const [input, setInput] = useState("");
-  const [notes, setNotes] = useState([]);
+  const [tweets, setTweets] = useState([]);
+
+  const sayHelloHandler = () => {
+    if (name === "Joshua") {
+      setName("Laika Beats");
+    } else {
+      setName("Joshua");
+    }
+  };
 
   return (
     <div>
-      <CreateNote
-        setInput={setInput}
+      <h1>hello {name}</h1>
+      <button className="active" onClick={sayHelloHandler}>
+        Click
+      </button>
+      <CreateTweet
         input={input}
-        setNotes={setNotes}
-        notes={notes}
+        setInput={setInput}
+        tweets={tweets}
+        setTweets={setTweets}
       />
-      <NoteList user={user} notes={notes} setNotes={setNotes} input={input} />
+      <TweetList
+        name={name}
+        input={input}
+        tweets={tweets}
+        setTweets={setTweets}
+      />
     </div>
   );
 }

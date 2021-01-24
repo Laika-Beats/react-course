@@ -6,7 +6,7 @@ function TweetList({ name, tweets, setTweets }) {
     <>
       {tweets.map((tweet) => (
         <Tweet
-          key={tweet}
+          key={tweet.id}
           name={name}
           tweet={tweet}
           setTweets={setTweets}
