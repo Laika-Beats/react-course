@@ -4,10 +4,19 @@ import CreateTweet from "./components/CreateTweet";
 
 function App() {
   const [user, setUser] = useState("Joshua");
+  const [textInput, setTextInput] = useState("");
+  const [tweets, setTweets] = useState([]);
+  const message = "test message";
+
   return (
     <div>
-      <CreateTweet />
-      <TweetList user={user} />
+      <CreateTweet
+        textInput={textInput}
+        setTextInput={setTextInput}
+        tweets={tweets}
+        setTweets={setTweets}
+      />
+      <TweetList user={user} tweets={tweets} />
     </div>
   );
 }
