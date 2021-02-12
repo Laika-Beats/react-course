@@ -1,12 +1,17 @@
 import React from "react";
 import Tweet from "./Tweet";
 
-const TweetList = ({ user, tweets }) => {
+const TweetList = ({ user, tweets, setTweets }) => {
   return (
     <div>
-      <Tweet user={user} tweets={tweets} />
-      <Tweet user={user} />
-      <Tweet user={user} />
+      {tweets.map((tweet) => (
+        <Tweet
+          user={user}
+          tweets={tweets}
+          tweet={tweet}
+          setTweets={setTweets}
+        />
+      ))}
     </div>
   );
 };
