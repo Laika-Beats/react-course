@@ -6,7 +6,6 @@ function App() {
   const [user, setUser] = useState("Joshua");
   const [textInput, setTextInput] = useState("");
   const [tweets, setTweets] = useState([]);
-  const message = "test message";
 
   return (
     <div>
