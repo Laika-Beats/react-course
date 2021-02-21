@@ -13,7 +13,6 @@ const CreateNote = ({ noteInput, setNoteInput, notes, setNotes }) => {
     <div>
       <form onSubmit={submitNote}>
         <h2>Write a Note:</h2>
-        <h3>{notes}</h3>
         <textarea value={noteInput} onChange={inputValue}></textarea>
         <button>Submit</button>
         <button>Clear</button>

@@ -3,7 +3,7 @@ import NoteFeed from "./components/Notes/NoteFeed";
 import CreateNote from "./components/CreateNote/CreateNote";
 
 function App() {
-  const [noteInput, setNoteInput] = useState("");
+  const [noteInput, setNoteInput] = useState();
   const [notes, setNotes] = useState([]);
 
   return (
@@ -14,7 +14,7 @@ function App() {
         notes={notes}
         setNotes={setNotes}
       />
-      <NoteFeed notes={notes} />
+      <NoteFeed notes={notes} setNotes={setNotes} />
     </div>
   );
 }
