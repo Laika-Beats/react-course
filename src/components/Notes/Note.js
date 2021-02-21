@@ -3,7 +3,7 @@ const Note = () => {
     <div>
       <h3>date</h3>
       <h1>NOTE</h1>
-      <button>complete</button>
+      <button>edit</button>
       <button>delete</button>
     </div>
   );

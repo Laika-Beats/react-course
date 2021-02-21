@@ -1,9 +1,10 @@
-import NoteFeed from "./components/NoteFeed";
+import NoteFeed from "./components/Notes/NoteFeed";
+import CreateNote from "./components/CreateNote/CreateNote";
 
 function App() {
   return (
     <div>
-      <h1>APP</h1>
+      <CreateNote />
       <NoteFeed />
     </div>
   );
