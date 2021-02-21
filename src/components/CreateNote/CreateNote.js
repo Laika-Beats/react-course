@@ -1,12 +1,6 @@
-import { useState } from "react";
-
-const CreateNote = () => {
-  const [noteInput, setNoteInput] = useState("");
-  const [notes, setNotes] = useState([]);
-
+const CreateNote = ({ noteInput, setNoteInput, notes, setNotes }) => {
   const inputValue = (event) => {
     setNoteInput(event.target.value);
-    console.log(event.target.value);
   };
 
   const submitNote = (event) => {

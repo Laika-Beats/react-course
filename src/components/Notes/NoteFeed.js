@@ -1,11 +1,11 @@
 import Note from "./Note";
 
-const NoteFeed = () => {
+const NoteFeed = ({ notes }) => {
   return (
     <div>
-      <Note />
-      <Note />
-      <Note />
+      {notes.map((note) => (
+        <Note key={note} note={note} />
+      ))}
     </div>
   );
 };
