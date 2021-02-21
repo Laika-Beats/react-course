@@ -1,21 +1,10 @@
-import React, { useState } from "react";
-import TweetList from "./components/TweetList";
-import CreateTweet from "./components/CreateTweet";
+import NoteFeed from "./components/NoteFeed";
 
 function App() {
-  const user = "Joshua";
-  const [textInput, setTextInput] = useState("");
-  const [tweets, setTweets] = useState([]);
-
   return (
     <div>
-      <CreateTweet
-        textInput={textInput}
-        setTextInput={setTextInput}
-        tweets={tweets}
-        setTweets={setTweets}
-      />
-      <TweetList user={user} tweets={tweets} setTweets={setTweets} />
+      <h1>APP</h1>
+      <NoteFeed />
     </div>
   );
 }
