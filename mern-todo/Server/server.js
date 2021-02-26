@@ -22,5 +22,5 @@ app.use("/todos", todoRoutes);
 
 // Connect to localhost
 app.listen(process.env.PORT, () =>
-  console.log("🌎🌎🌎 Server Started. Listening on http://localhost:3000/")
+  console.log("🌎🌎🌎 Server Started. Listening on http://localhost:4000/")
 );
