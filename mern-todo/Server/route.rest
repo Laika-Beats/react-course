@@ -23,3 +23,6 @@ Content-Type: application/json
   "message": "I EDITED THIS AGAIN!",
   "completed": true
 }
+
+###
+DELETE  http://localhost:3000/todos/6038472d4b2b5e2ff0923d6b
