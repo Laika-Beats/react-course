@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
+// Prevents CORS error on front-end when connecting to API
 app.use(cors());
 
 // Connect to mongoDB
@@ -25,5 +26,7 @@ app.use("/todos", todoRoutes);
 
 // Connect to localhost
 app.listen(process.env.PORT, () =>
-  console.log("🌎🌎🌎 Server Started. Listening on http://localhost:4000/")
+  console.log(
+    "🌎🌎🌎 Server Started. Listening on http://localhost:" + process.env.PORT
+  )
 );

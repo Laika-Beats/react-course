@@ -2,12 +2,12 @@ GET http://localhost:3000/todos
 
 ###
 
-POST http://localhost:3000/todos
+POST http://localhost:4000/todos
 Content-Type: application/json
 
 {
-  "message": "This is a SECOND test, baby",
-  "completed": true
+  "message": "This is a DOPE test, G",
+  "completed": false
 }
 
 ###
