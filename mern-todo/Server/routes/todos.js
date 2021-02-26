@@ -15,6 +15,18 @@ router.get("/", async (req, res) => {
 // GET ONE
 // router.get("/:id");
 // CREATE
+router.post("/", async (req, res) => {
+  const todo = new Todo({
+    message: req.body.message,
+    completed: req.body.completed,
+  });
+  try {
+    const newTodo = await todo.save();
+    res.status(201).json(newTodo);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
 // DELETE
 // UPDATE
 
