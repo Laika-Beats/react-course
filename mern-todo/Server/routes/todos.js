@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const router = express.Router();
 const Todo = require("../models/todo.js");
 
-// GET ALL
+// GET ALL todos
 router.get("/", async (req, res) => {
   try {
     const todos = await Todo.find();
@@ -12,8 +12,12 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-// GET ONE
-// router.get("/:id");
+
+// GET ONE todo
+router.get("/:id", getTodo, (req, res) => {
+  res.json(res.todo);
+});
+
 // CREATE
 router.post("/", async (req, res) => {
   const todo = new Todo({
@@ -29,5 +33,20 @@ router.post("/", async (req, res) => {
 });
 // DELETE
 // UPDATE
+
+// Middleware
+async function getTodo(req, res, next) {
+  let todo;
+  try {
+    todo = await Todo.findById(req.params.id);
+    if (todo === null) {
+      return res.status(404).json({ message: "Cannot find Todo." });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+  res.todo = todo;
+  next();
+}
 
 module.exports = router;
