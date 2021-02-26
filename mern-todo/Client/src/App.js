@@ -26,7 +26,14 @@ const App = () => {
         currentId={currentId}
         setCurrentId={setCurrentId}
       />
-      <TodoList todos={todos} setCurrentId={setCurrentId} />
+      <TodoList
+        todos={todos}
+        setCurrentId={setCurrentId}
+        todoData={todoData}
+        setTodoData={setTodoData}
+        currentId={currentId}
+        dispatch={dispatch}
+      />
     </div>
   );
 };
