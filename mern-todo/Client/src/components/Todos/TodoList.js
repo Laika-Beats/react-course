@@ -1,10 +1,10 @@
-import Todo from "./Todo";
+import Todo from "./Todo/Todo";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, setCurrentId }) => {
   return (
     <div>
       {todos.map((todo) => (
-        <Todo key={todo._id} todo={todo} />
+        <Todo key={todo._id} todo={todo} setCurrentId={setCurrentId} />
       ))}
     </div>
   );

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getTodos, deleteTodo } from "../../actions/todos";
+import { getTodos, deleteTodo } from "../../../actions/todos";
 
 const Todo = ({ todo, setCurrentId }) => {
   const dispatch = useDispatch();
@@ -15,10 +15,8 @@ const Todo = ({ todo, setCurrentId }) => {
     await dispatch(getTodos());
   };
   const editHandler = () => {
-    const editTodo = () => {
-      setCurrentId(todo._id);
-    };
-    editTodo();
+    setCurrentId(todo._id);
+    window.scrollTo(0, 0);
   };
 
   return (
