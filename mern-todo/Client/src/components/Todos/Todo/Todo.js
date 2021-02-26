@@ -1,7 +1,12 @@
 import { getTodos, updateTodo, deleteTodo } from "../../../actions/todos";
 import "./Todo.css";
 
-const Todo = ({ todo, setCurrentId, todoData, setTodoData, dispatch }) => {
+const Todo = ({ todo, todoData, setTodoData, setCurrentId, dispatch }) => {
+  const clear = () => {
+    setCurrentId(0);
+    setTodoData({ message: " " });
+  };
+
   // BUTTON HANDLERS
   const deleteHandler = async () => {
     await dispatch(deleteTodo(todo._id));
@@ -34,11 +39,6 @@ const Todo = ({ todo, setCurrentId, todoData, setTodoData, dispatch }) => {
       );
     }
     clear();
-  };
-
-  const clear = () => {
-    setCurrentId(0);
-    setTodoData({ message: " " });
   };
 
   return (

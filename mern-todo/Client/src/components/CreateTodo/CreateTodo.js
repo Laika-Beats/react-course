@@ -1,32 +1,32 @@
-import { useEffect } from "react";
 import { createTodo, updateTodo } from "../../actions/todos";
-import { useDispatch, useSelector } from "react-redux";
 
-const CreateTodo = ({ todoData, setTodoData, currentId, setCurrentId }) => {
-  const dispatch = useDispatch();
-
-  const todo = useSelector((state) =>
-    currentId ? state.todos.find((t) => t._id === currentId) : null
-  );
-
-  useEffect(() => {
-    if (todo) setTodoData(todo);
-  }, [todo, setTodoData]);
+const CreateTodo = ({
+  todoData,
+  setTodoData,
+  currentId,
+  setCurrentId,
+  dispatch,
+}) => {
+  const clear = () => {
+    setCurrentId(0);
+    setTodoData({ message: " " });
+  };
 
   // BUTTON HANDLERS
   const submitHandler = (e) => {
     e.preventDefault();
     if (currentId === 0) {
       dispatch(createTodo({ ...todoData }));
-      clearHandler();
+      clear();
     } else {
       dispatch(updateTodo(currentId, { ...todoData }));
-      clearHandler();
+      clear();
     }
   };
-  const clearHandler = () => {
-    setCurrentId(0);
-    setTodoData({ message: " " });
+
+  const clearHandler = (e) => {
+    e.preventDefault();
+    clear();
   };
 
   return (

@@ -2,10 +2,10 @@ import Todo from "./Todo/Todo";
 
 const TodoList = ({
   todos,
-  setCurrentId,
   todoData,
   setTodoData,
   currentId,
+  setCurrentId,
   dispatch,
 }) => {
   return (
@@ -14,10 +14,10 @@ const TodoList = ({
         <Todo
           key={todo._id}
           todo={todo}
-          setCurrentId={setCurrentId}
           todoData={todoData}
           setTodoData={setTodoData}
           currentId={currentId}
+          setCurrentId={setCurrentId}
           dispatch={dispatch}
         />
       ))}
