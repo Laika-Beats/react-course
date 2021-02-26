@@ -9,3 +9,17 @@ Content-Type: application/json
   "message": "This is a SECOND test, baby",
   "completed": true
 }
+
+###
+
+GET http://localhost:3000/todos/6038472d4b2b5e2ff0923d6b
+
+###
+
+PATCH http://localhost:3000/todos/6038472d4b2b5e2ff0923d6b
+Content-Type: application/json
+
+{
+  "message": "I EDITED THIS AGAIN!",
+  "completed": true
+}
