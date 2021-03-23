@@ -1,11 +1,11 @@
 import Todo from "./Todo";
 
-const TodoFeed = () => {
+const TodoFeed = ({ todos }) => {
   return (
     <div>
-      <Todo />
-      <Todo />
-      <Todo />
+      {todos.map((todo) => (
+        <Todo key={todo} todo={todo} />
+      ))}
     </div>
   );
 };

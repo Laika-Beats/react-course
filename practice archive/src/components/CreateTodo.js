@@ -1,9 +1,4 @@
-import { useState } from "react";
-
-const CreateTodo = () => {
-  const [todoInput, setTodoInput] = useState("");
-  const [todos, setTodos] = useState([]);
-
+const CreateTodo = ({ todos, setTodos, todoInput, setTodoInput }) => {
   const inputText = (e) => {
     setTodoInput(e.target.value);
   };
@@ -12,6 +7,10 @@ const CreateTodo = () => {
     e.preventDefault();
     console.log(todoInput);
     setTodos([...todos, todoInput]);
+    clearForm();
+  };
+
+  const clearForm = () => {
     setTodoInput("");
   };
 
