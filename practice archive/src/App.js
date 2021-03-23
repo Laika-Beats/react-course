@@ -1,5 +1,11 @@
+import TodoFeed from "./components/TodoFeed";
+
 const App = () => {
-  return <div>APP</div>;
+  return (
+    <div>
+      <TodoFeed />
+    </div>
+  );
 };
 
 export default App;
