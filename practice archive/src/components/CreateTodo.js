@@ -17,7 +17,7 @@ const CreateTodo = ({ todos, setTodos, todoInput, setTodoInput }) => {
   return (
     <div>
       <form onSubmit={submitTodoHandler}>
-        <textarea onChange={inputText}></textarea>
+        <textarea value={todoInput} onChange={inputText}></textarea>
         <button>Submit</button>
       </form>
     </div>

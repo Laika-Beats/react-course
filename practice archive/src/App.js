@@ -14,7 +14,7 @@ const App = () => {
         todos={todos}
         setTodos={setTodos}
       />
-      <TodoFeed todos={todos} />
+      <TodoFeed todos={todos} setTodos={setTodos} />
     </div>
   );
 };
